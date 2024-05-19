@@ -29,8 +29,8 @@ $books = readBooksFromJson("books.json");
                     <h2>List of Books</h2>
                 </div>
                 <div class="col-md-5 text-right">
-                    <form class="form-inline">
-                        <input type="text" class="form-control form-control-sm" name="search" required>&nbsp;
+                    <form class="form-inline" action="actions/searchbook.php" method="post">
+                        <input type="text" class="form-control form-control-sm" name="search_keyword" required>&nbsp;
                         <button type="submit" class="btn btn-sm btn-info">Search</button>&nbsp;
                         <a href="pages/addnewbook.php" class="btn btn-sm btn-primary">Add New Book</a>
                     </form>

@@ -2,9 +2,9 @@
     {
         "title": "1984",
         "author": "George Orwell",
-        "available": true,
-        "pages": 267,
-        "isbn": 9780547249643
+        "available": false,
+        "pages": "267",
+        "isbn": "9780547249643"
     },
     {
         "title": "One Hundred Years Of Solitude",
@@ -16,7 +16,7 @@
     {
         "title": "Database System Concept",
         "author": "Silbarchatz",
-        "isbn": "6482747328947289",
+        "isbn": "6482747328947",
         "pages": "233",
         "available": false
     },
@@ -24,14 +24,7 @@
         "title": "A Passage to English Grammer",
         "author": "SM Zakir Hossian",
         "isbn": "7293847200",
-        "pages": "231",
+        "pages": "232",
         "available": false
-    },
-    {
-        "title": "Introduction to Algorithms",
-        "author": "Cormen",
-        "isbn": "3824729423",
-        "pages": "890",
-        "available": true
     }
 ]
