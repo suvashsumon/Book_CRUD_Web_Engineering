@@ -1,32 +1,12 @@
 <?php
+
+require 'Book.php';
+
 // Get the search keyword from the POST request
 $search_keyword = $_POST['search_keyword'];
 
-// Function to read JSON file and return decoded data
-function readBooksFromJson($filename) {
-    $jsonString = file_get_contents($filename);
-    return json_decode($jsonString, true);
-}
-
-// Read books from JSON file
-$filename = "../books.json";
-$books = readBooksFromJson($filename);
-// Array to store matching books
-$matching_books = [];
-
-// Loop through each book to perform the search
-foreach ($books as $book) {
-    // Loop through each value of the book
-    foreach ($book as $value) {
-        // Check if the search keyword is found in the current value
-        if (stripos($value, $search_keyword) !== false) {
-            // If found, add the book to the matching_books array
-            $matching_books[] = $book;
-            // Break out of the inner loop to avoid duplicate entries
-            break;
-        }
-    }
-}
+$bookManager = new Book();
+$matching_books = $bookManager->searchBooks($search_keyword);
 
 $len = count($matching_books);
 ?>
@@ -50,10 +30,10 @@ $len = count($matching_books);
                     <h2>Showing result for "<?php echo($search_keyword); ?>"</h2>
                 </div>
                 <div class="col-md-5 text-right">
-                    <form class="form-inline" action="../actions/searchbook.php" method="post">
+                    <form class="form-inline" action="searchbook.php" method="post">
                         <input type="text" class="form-control form-control-sm" name="search_keyword" required>&nbsp;
                         <button type="submit" class="btn btn-sm btn-info">Search</button>&nbsp;
-                        <a href="../index.php" class="btn btn-sm btn-primary">Back</a>
+                        <a href="index.php" class="btn btn-sm btn-primary">Back</a>
                     </form>
                 </div>
             </div>
@@ -94,14 +74,14 @@ $len = count($matching_books);
                         <td>
                             <div class="row">
                                 <div class="col-md-6">
-                                    <form method="post" action="../pages/updatebook.php">
+                                    <form method="post" action="pages/updatebook.php">
                                         <input type="hidden" name="update_book_index" value="<?php echo $index; ?>">
                                         <button type="submit" class="btn btn-sm btn-info"
                                             name="update_book">Update</button>
                                     </form>
                                 </div>
                                 <div class="col-md-6">
-                                    <form method="post" action="../actions/deletebook.php"
+                                    <form method="post" action="../deletebook.php"
                                         onsubmit="return confirmDelete();">
                                         <input type="hidden" name="delete_book_index" value="<?php echo $index; ?>">
                                         <button type="submit" class="btn btn-sm btn-danger"

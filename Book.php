@@ -25,19 +25,19 @@ class Book {
     }
 
     // 3. Search by a keyword
-    public function searchBooks($keyword) {
+    public function searchBooks($search_keyword) {
         $books = $this->readBooks();
-        $result = [];
-
+        $matching_books = [];
         foreach ($books as $book) {
-            if (stripos($book['title'], $keyword) !== false || 
-                stripos($book['author'], $keyword) !== false || 
-                stripos($book['description'], $keyword) !== false) {
-                $result[] = $book;
+            foreach ($book as $value) {
+                if (stripos($value, $search_keyword) !== false) {
+                    $matching_books[] = $book;
+                    break;
+                }
             }
         }
 
-        return $result;
+        return $matching_books;
     }
 
     // 4. Update a specific book's information
