@@ -26,5 +26,19 @@
         "isbn": "7293847200",
         "pages": "232",
         "available": false
+    },
+    {
+        "title": "Mastering React",
+        "author": "Suvash Kumar",
+        "isbn": "748294729429",
+        "pages": "306",
+        "available": false
+    },
+    {
+        "title": "Introduction to Algorithms",
+        "author": "Hari Madhab",
+        "isbn": "424824820",
+        "pages": "66",
+        "available": true
     }
 ]

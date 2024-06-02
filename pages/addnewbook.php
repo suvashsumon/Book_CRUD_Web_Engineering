@@ -13,7 +13,7 @@
     <div class="container">
         <div class="card p-5 mb-5 mt-5">
             <h2>Add New Book</h2>
-            <form method="post" action="../actions/addnewbook.php">
+            <form method="post" action="../addnewbook.php">
                 <div class="form-group">
                     <label for="title">Title:</label>
                     <input type="text" class="form-control" id="title" name="title" required>
