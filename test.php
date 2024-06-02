@@ -3,8 +3,7 @@
 require 'Book.php';
 
 $bookManager = new Book();
-$books = $bookManager->readBooks();
-
+$books = $bookManager->readBooks();;
 ?>
 
 <!DOCTYPE html>
