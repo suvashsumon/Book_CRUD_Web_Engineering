@@ -24,7 +24,7 @@ $book = $books[$book_index];
     <div class="container">
         <div class="card p-5 mb-5 mt-5">
             <h2>Add New Book</h2>
-            <form method="post" action="../actions/updatebook.php">
+            <form method="post" action="../updatebook.php">
                 <input name="update_book_index" value="<?php echo($book_index); ?>" type="hidden">
                 <div class="form-group">
                     <label for="title">Title:</label>

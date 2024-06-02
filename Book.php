@@ -43,16 +43,12 @@ class Book {
     // 4. Update a specific book's information
     public function updateBook($bookId, $updatedBook) {
         $books = $this->readBooks();
-
-        foreach ($books as $index => $book) {
-            if ($book['id'] == $bookId) {
-                $books[$index] = array_merge($book, $updatedBook);
-                $this->writeBooks($books);
-                return true;
-            }
-        }
-
-        return false;
+        $books[$bookId]['title'] = $updatedBook['title'];
+        $books[$bookId]['author'] = $updatedBook['author'];
+        $books[$bookId]['isbn'] = $updatedBook['isbn'];
+        $books[$bookId]['pages'] = $updatedBook['pages'];
+        $books[$bookId]['available'] = $updatedBook['available'];
+        $this->writeBooks($books);
     }
 
     // Helper function to write the books array back to the JSON file

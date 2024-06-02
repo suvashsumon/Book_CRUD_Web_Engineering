@@ -1,10 +1,10 @@
 [
     {
-        "title": "1984",
+        "title": "1945",
         "author": "George Orwell",
         "available": false,
-        "pages": "267",
-        "isbn": "97805472496"
+        "pages": "666",
+        "isbn": "890482049820"
     },
     {
         "title": "One Hundred Years Of Solitude",
@@ -25,7 +25,7 @@
         "author": "SM Zakir Hossian",
         "isbn": "7293847200",
         "pages": "232",
-        "available": false
+        "available": true
     },
     {
         "title": "Mastering React",
@@ -38,7 +38,7 @@
         "title": "Introduction to Algorithms",
         "author": "Hari Madhab",
         "isbn": "424824820",
-        "pages": "66",
+        "pages": "669",
         "available": true
     }
 ]
